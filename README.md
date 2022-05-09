@@ -28,7 +28,14 @@ python train.py --config_path ./Configs/config.yml
 ```
 Please specify the training and validation data in `config.yml` file. Change `num_domains` to the number of speakers in the dataset. The data list format needs to be `filename.wav|speaker_number`, see [train_list.txt](https://github.com/yl4579/StarGANv2-VC/blob/main/Data/train_list.txt) as an example. 
 
-Checkpoints and Tensorboard logs will be saved at `log_dir`. To speed up training, you may want to make `batch_size` as large as your GPU RAM can take. However, please note that `batch_size = 5` will take around 10G GPU RAM. 
+Checkpoints and Tensorboard logs will be saved at `log_dir`. To speed up training, you may want to make `batch_size` as large as your GPU RAM can take. However, please note that `batch_size = 5` will take around 10G GPU RAM.
+
+**What kind of data to use should be specified in "train.txt" and 'val.txt'. If you change the training data, don't forget to edit this part in the config file. Also note that the number of speakers is also changed according to the input data.**
+
+## pretained model
+
+**You can download epoch files and config files trained in each language from our Notion page. Using that file, you can directly try to infer.**
+
 
 ## Inference
 
