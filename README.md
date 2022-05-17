@@ -1,6 +1,7 @@
 # StarGANv2-VC: A Diverse, Unsupervised, Non-parallel Framework for Natural-Sounding Voice Conversion
 
 ### Yinghao Aaron Li, Ali Zare, Nima Mesgarani
+이 페이지는 원래 read.md 페이지를 수정한 것이며, **강조** 부분이 수정 부분임을 미리 알려드립니다.
 
 > We present an unsupervised non-parallel many-to-many voice conversion (VC) method using a generative adversarial network (GAN) called StarGAN v2. Using a combination of adversarial source classifier loss and perceptual loss, our model significantly outperforms previous VC models. Although our model is trained only with 20 English speakers, it generalizes to a variety of voice conversion tasks, such as any-to-many, cross-lingual, and singing conversion. Using a style encoder, our framework can also convert plain reading speech into stylistic speech, such as emotional and falsetto speech. Subjective and objective evaluation experiments on a non-parallel many-to-many voice conversion task revealed that our model produces natural sounding voices, close to the sound quality of state-of-the-art text-tospeech (TTS) based voice conversion methods without the need for text labels. Moreover, our model is completely convolutional and with a faster-than-real-time vocoder such as Parallel WaveGAN can perform real-time voice conversion.
 
@@ -60,3 +61,12 @@ You can edit the [meldataset.py](https://github.com/yl4579/StarGANv2-VC/blob/mai
 
 ## Acknowledgement
 The author would like to thank [@tosaka-m](https://github.com/tosaka-m) for his great repository and valuable discussions.
+
+---
+## 모델 이용 방향 및 개선 방향
+
+- 음성데이터에 대한 전처리 작업
+- StarGan 의 Gan 학습을 위해 최소 50 에폭 이상 학습 시켜야함
+- 다국어 모델보다는 하나의 언어를 학습시켰을 때 학습 결과가 더 좋았음
+- 실제 다국어 모델을 위한 ASR을 배포 예정이라 깃헙 원 제작자가 밝힘. 이는 향후 개선 방향
+- discriminator 에 대해서 너무 많은 화자가 들어가는 것은 성능을 저하시킬 수 있다 원 저작자 언급. 이 또한 개선 방향으로 작업 가능
